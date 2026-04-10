@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-label="Traffic shifts over time with adaptive allocation">
+  <rect width="1200" height="620" fill="#f9fcff"/>
+  <text x="600" y="52" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#1f2d3a">Traffic Allocation Shift Over Time</text>
+
+  <rect x="110" y="110" width="980" height="420" fill="#ffffff" stroke="#c8d8e2"/>
+
+  <line x1="180" y1="470" x2="1030" y2="470" stroke="#5b7283" stroke-width="2"/>
+  <line x1="180" y1="170" x2="180" y2="470" stroke="#5b7283" stroke-width="2"/>
+
+  <text x="610" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#334b5c">Time</text>
+  <text x="92" y="320" transform="rotate(-90 92,320)" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#334b5c">Traffic Share</text>
+
+  <text x="150" y="478" font-family="Arial, sans-serif" font-size="14" fill="#334b5c">0%</text>
+  <text x="145" y="325" font-family="Arial, sans-serif" font-size="14" fill="#334b5c">50%</text>
+  <text x="145" y="177" font-family="Arial, sans-serif" font-size="14" fill="#334b5c">100%</text>
+
+  <path d="M180 320 C 330 320, 420 295, 520 260 C 620 225, 740 195, 860 180 C 940 170, 990 168, 1030 166"
+        fill="none" stroke="#1d8f6a" stroke-width="6"/>
+  <path d="M180 320 C 330 320, 420 345, 520 380 C 620 415, 740 445, 860 460 C 940 468, 990 470, 1030 472"
+        fill="none" stroke="#c0563d" stroke-width="6"/>
+
+  <line x1="180" y1="320" x2="1030" y2="320" stroke="#b8c8d2" stroke-dasharray="7 7"/>
+
+  <circle cx="180" cy="320" r="7" fill="#1d8f6a"/>
+  <circle cx="180" cy="320" r="7" fill="#c0563d" opacity="0.8"/>
+  <circle cx="1030" cy="166" r="7" fill="#1d8f6a"/>
+  <circle cx="1030" cy="472" r="7" fill="#c0563d"/>
+
+  <rect x="790" y="124" width="250" height="90" rx="10" fill="#ffffff" stroke="#cad7df"/>
+  <line x1="815" y1="154" x2="885" y2="154" stroke="#1d8f6a" stroke-width="6"/>
+  <text x="900" y="160" font-family="Arial, sans-serif" font-size="18" fill="#22313f">Variant A</text>
+  <line x1="815" y1="186" x2="885" y2="186" stroke="#c0563d" stroke-width="6"/>
+  <text x="900" y="192" font-family="Arial, sans-serif" font-size="18" fill="#22313f">Variant B</text>
+
+  <text x="610" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#4a6272">Example only: algorithm gradually prefers better-performing variant while keeping exploration</text>
+</svg>

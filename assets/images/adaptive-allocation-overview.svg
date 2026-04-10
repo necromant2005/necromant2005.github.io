@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="Adaptive allocation overview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7fbff"/>
+      <stop offset="100%" stop-color="#eef7f0"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#4f6d7a"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="520" fill="url(#bg)"/>
+
+  <text x="600" y="55" font-family="Georgia, serif" font-size="34" text-anchor="middle" fill="#1f2d3a">Adaptive Allocation in A/B Testing</text>
+
+  <rect x="90" y="120" width="300" height="170" rx="14" fill="#ffffff" stroke="#b8c7d1"/>
+  <text x="240" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#2c3e50">Start 50 / 50</text>
+  <text x="240" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#445a6b">Variant A vs Variant B</text>
+  <text x="240" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#445a6b">Collect early signals</text>
+
+  <rect x="450" y="120" width="300" height="170" rx="14" fill="#ffffff" stroke="#b8c7d1"/>
+  <text x="600" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#2c3e50">Update Belief</text>
+  <text x="600" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#445a6b">A looks better now</text>
+  <text x="600" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#445a6b">But keep exploration</text>
+
+  <rect x="810" y="120" width="300" height="170" rx="14" fill="#ffffff" stroke="#b8c7d1"/>
+  <text x="960" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#2c3e50">Shift Traffic</text>
+  <text x="960" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#445a6b">A: 70%</text>
+  <text x="960" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#445a6b">B: 30%</text>
+
+  <line x1="390" y1="205" x2="445" y2="205" stroke="#4f6d7a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="750" y1="205" x2="805" y2="205" stroke="#4f6d7a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="90" y="345" width="1020" height="120" rx="12" fill="#ffffff" stroke="#c8d6df"/>
+  <text x="600" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#22313f">Goal: Learn fast and reduce exposure to weaker variants</text>
+  <text x="600" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#4a5f70">Safety rules: traffic floor, guardrails, minimum sample, clear stop criteria</text>
+</svg>
