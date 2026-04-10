@@ -1,0 +1,29 @@
+title: Necro Notes
+description: A simple Bootstrap-powered blog built with Jekyll.
+url: "https://necromant2005.github.io"
+baseurl: ""
+timezone: Europe/Kiev
+markdown: kramdown
+permalink: /:title/
+
+author:
+  name: Necro
+  bio: Notes on code, ideas, and projects.
+
+collections:
+  pages:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
