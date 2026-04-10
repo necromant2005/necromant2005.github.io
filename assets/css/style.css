@@ -1,0 +1,16 @@
+/* Rouge/Jekyll code blocks: close to Bootstrap bg-dark text-white p-4 */
+pre.highlight,
+.highlight pre {
+  background-color: #212529;
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+  line-height: 1.45;
+}
+
+pre.highlight code,
+.highlight pre code {
+  color: inherit;
+  background: transparent;
+}

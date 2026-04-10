@@ -56,6 +56,75 @@ This naturally balances exploration and exploitation.
 
 ![How allocation shifts over time](/assets/images/adaptive-allocation-traffic-shift.svg)
 
+## Code Samples
+
+### Epsilon-Greedy Router (Python)
+
+```python
+import random
+
+EPSILON = 0.1
+
+# Example metrics from your analytics store
+stats = {
+    "A": {"conversions": 120, "visits": 2000},
+    "B": {"conversions": 140, "visits": 2100},
+}
+
+def conversion_rate(variant):
+    s = stats[variant]
+    return s["conversions"] / max(s["visits"], 1)
+
+def pick_variant():
+    if random.random() < EPSILON:
+        return random.choice(["A", "B"])  # explore
+    return max(["A", "B"], key=conversion_rate)  # exploit
+```
+
+### Thompson Sampling (Python)
+
+```python
+import random
+
+# Beta prior parameters per variant: alpha = successes + 1, beta = failures + 1
+beta_params = {
+    "A": {"alpha": 121, "beta": 1881},  # 120 conversions, 1880 failures
+    "B": {"alpha": 141, "beta": 1961},  # 140 conversions, 1960 failures
+}
+
+def sample_score(variant):
+    p = beta_params[variant]
+    return random.betavariate(p["alpha"], p["beta"])
+
+def pick_variant():
+    sampled = {v: sample_score(v) for v in ["A", "B"]}
+    return max(sampled, key=sampled.get)
+```
+
+### Guardrail Query Example (SQL)
+
+```sql
+SELECT
+  variant,
+  COUNT(*) AS sessions,
+  AVG(CASE WHEN converted THEN 1 ELSE 0 END) AS conversion_rate,
+  AVG(latency_ms) AS avg_latency_ms,
+  AVG(CASE WHEN had_crash THEN 1 ELSE 0 END) AS crash_rate
+FROM experiment_events
+WHERE experiment_key = 'checkout_button_adaptive'
+  AND event_time >= NOW() - INTERVAL '24 hours'
+GROUP BY variant;
+```
+
+## Tools You Can Use
+
+- `GrowthBook`: feature flags + experimentation with gradual rollout controls.
+- `LaunchDarkly`: production-grade flags and traffic targeting.
+- `PostHog`: product analytics and experiment readouts in one place.
+- `Optimizely`: enterprise experimentation platform with stats support.
+- `VWO`: easier UI-driven experimentation for product teams.
+- `SciPy` or `PyMC`: if you want your own Bayesian logic and custom policies.
+
 ## Rules That Keep It Safe
 
 1. Start with an exploration floor: keep at least 10% traffic for each active variant.
