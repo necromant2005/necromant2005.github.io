@@ -1,57 +1,9 @@
 ---
 layout: default
 ---
-<section class="hero-section py-5 py-lg-6">
-  <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-7">
-        <span class="badge rounded-pill text-bg-light border mb-3">Jekyll + Bootstrap</span>
-        <h1 class="display-4 fw-bold mb-3">{{ page.hero_title | default: site.title }}</h1>
-        <p class="lead text-body-secondary mb-4">{{ page.hero_text | default: site.description }}</p>
-        <div class="d-flex flex-wrap gap-3">
-          <a class="btn btn-dark btn-lg" href="#latest-posts">Read the blog</a>
-          <a class="btn btn-outline-dark btn-lg" href="{{ '/about/' | relative_url }}">About me</a>
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="hero-card shadow-sm">
-          <p class="text-uppercase small fw-semibold text-body-secondary mb-3">Latest post</p>
-          {% assign latest_post = site.posts.first %}
-          {% if latest_post %}
-            <h2 class="h3 mb-3">{{ latest_post.title }}</h2>
-            <p class="text-body-secondary mb-4">{{ latest_post.excerpt | strip_html | truncate: 160 }}</p>
-            <a class="stretched-link link-dark fw-semibold text-decoration-none" href="{{ latest_post.url | relative_url }}">Open article</a>
-          {% else %}
-            <h2 class="h3 mb-3">Your first article goes here</h2>
-            <p class="text-body-secondary mb-0">Create a file inside <code>_posts/</code> and it will appear on the homepage automatically.</p>
-          {% endif %}
-        </div>
-      </div>
-    </div>
+<div class="row">
+  <div class="text-center">
+    <!-- <p class="text-uppercase small text-secondary mb-2">{{ page.hero_title | default: site.title }}</p> -->
+    <h1 class="h3">{{ page.hero_text | default: site.description }}</h1>
   </div>
-</section>
-
-<section id="latest-posts" class="pb-5">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-end mb-4">
-      <div>
-        <p class="text-uppercase small fw-semibold text-body-secondary mb-2">Archive</p>
-        <h2 class="h1 mb-0">Latest posts</h2>
-      </div>
-    </div>
-    <div class="row g-4">
-      {% for post in site.posts %}
-        <div class="col-md-6 col-xl-4">
-          <article class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <p class="small text-body-secondary mb-2">{{ post.date | date: '%b %-d, %Y' }}</p>
-              <h3 class="h4 card-title">{{ post.title }}</h3>
-              <p class="card-text text-body-secondary">{{ post.excerpt | strip_html | truncate: 145 }}</p>
-              <a class="stretched-link link-dark fw-semibold text-decoration-none" href="{{ post.url | relative_url }}">Read more</a>
-            </div>
-          </article>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+</div>

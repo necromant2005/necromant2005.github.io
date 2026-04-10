@@ -1,8 +1,8 @@
 title: Necro Notes
-description: A simple Bootstrap-powered blog built with Jekyll.
+description: Entrepreneur, CTO, Unemployed - choose two
 url: "https://necromant2005.github.io"
 baseurl: ""
-timezone: Europe/Kiev
+timezone: UTC
 markdown: kramdown
 permalink: /:title/
 
@@ -24,6 +24,26 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: "_pages/dev"
+    values:
+      category: Dev
+      permalink: /dev/:basename/
+  - scope:
+      path: "_pages/management"
+    values:
+      category: Management
+      permalink: /management/:basename/
+  - scope:
+      path: "_pages/analytics"
+    values:
+      category: Analytics
+      permalink: /analytics/:basename/
+  - scope:
+      path: "_pages/other"
+    values:
+      category: Other
+      permalink: /other/:basename/
 
 exclude:
   - README.md
