@@ -5,7 +5,7 @@ permalink: /dev/rag-as-similarity-engine/
 
 # RAG As Similarity Engine
 
-Most people talk about RAG(Retrieval-Augmented Generation) like it is mainly for chatbots. On [hayovasweets.com/recipes](https://www.hayovasweets.com/recipes), I use it for something much simpler: finding similar recipes. For this kind of site, that feels like a much more normal use case. I just wanted a simple way to show related recipes in the same locale without building some bigger recommendation system.
+Most people talk about **RAG(Retrieval-Augmented Generation)** like it is mainly for chatbots. On [hayovasweets.com/recipes](https://www.hayovasweets.com/recipes), I use it for something much simpler: finding similar recipes. For this kind of site, that feels like a much more normal use case. I just wanted a simple way to show related recipes in the same locale without building some bigger recommendation system.
 
 ## How Similarity Works
 
