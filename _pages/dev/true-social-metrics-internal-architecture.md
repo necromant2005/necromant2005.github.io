@@ -148,11 +148,9 @@ That is exactly why the worker split matters. A 10x spike in social input should
 
 The system is also smart about when it prepares data. It does not only wait until a user clicks a button. It tries to predict demand and move work earlier when possible.
 
-The first trick is simple: we start loading user data while the user is still signing in. So before the dashboard is even opened, tasks can already be sitting in the queue.
-
-The second trick is to use historical behavior. If we know a customer usually needs data at the end of the month, we can preload it before they ask.
-
-The third trick is to run heavier analysis during low-load periods and then recalculate only the diff on a live request. That keeps the expensive work away from peak traffic.
+- start loading user data while the user is still signing in, so before the dashboard is even opened, tasks can already be sitting in the queue
+- use historical behavior, so if we know a customer usually needs data at the end of the month, we can preload it before they ask
+- run heavier analysis during low-load periods and then recalculate only the diff on a live request, keeping expensive work away from peak traffic
 
 These are simple tricks, but together they help a lot. Users get data faster, and the system avoids some nasty spikes because part of the work is already done before the hot request path even starts.
 
